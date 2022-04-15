@@ -1,16 +1,27 @@
+body {
+  font-size: 10em;
+  text-align: center;
+  margin: 0 auto;
+}
 
-
-h1{
+h1 {
   color: red;
 }
 
-.row{
-  display: flex;
+.game-board {
+  margin: 1em 0;
 }
 
-.cell{
-  border: 1px solid black;
-  height: 100px;
-  width:  100px;
+.row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
 
+.cell {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
 }
