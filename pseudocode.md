@@ -12,8 +12,9 @@
 1. Player X
 2. Player O
 
-##T O-DO:
+## TO-DO:
  [x]center game board
+ []push X/O to array
 
 Clicks
 - click a box, put a **mark**
@@ -84,3 +85,27 @@ if (player == "X") {
 } else {
 	player = "X";
 }
+
+## put "X" or "O" in array!
+- click square, get ID
+- based on id, figure out where in array to place the X or O!
+
+- check first element of array [ "0-0" , "0-1" , "0-2"]
+  - does this array contain the ID?
+  - if not, continue
+check second element [ , , ]
+
+# Push To Grid Array Attempt #2
+row
+cell
+if this.id = "0-" + x
+then grid[0][x].push(player)
+
+  for (let r = 0; r < 3; r++){
+    for (let c = 0; c < 3; c++){
+      if (this.id === r + "-" + c){
+        grid[r].splice(c, 1, player);
+      }
+    }
+
+    }
