@@ -109,3 +109,10 @@ then grid[0][x].push(player)
     }
 
     }
+
+
+# WINS
+- HORIZONTAL: if grid[r][0], grid[r][1], grid[r][2] = all X's or O's
+- VERTICAL: if grid[0][c], grid[1][c], grid[2][c] = all X's or O's
+
+- DIAGONAL: custom
