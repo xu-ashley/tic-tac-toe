@@ -14,8 +14,15 @@ var grid = [
 $(".cell").click(function() {
   var clickedCell = $(this).attr("id");
 
-  console.log(player + " marked in box " + clickedCell);
-  $("#" + clickedCell).text(player);
+  if ($("#" + clickedCell).text() == "X" || $("#" + clickedCell).text() == "O") {
+    console.log("This box is already filled.");
+    return;
+  }else{
+    console.log(player + " marked in box " + clickedCell);
+    $("#" + clickedCell).text(player);
+    pushToGrid();
+  }
+
 
   function pushToGrid() {
     var identifyRow = parseInt(clickedCell.charAt(0));
@@ -23,10 +30,8 @@ $(".cell").click(function() {
 
     grid[identifyRow].splice(positionClickedCell, 1, player);
     console.log(grid);
-    
-  }
 
-  pushToGrid();
+  }
 
   if (player == "X") {
     player = "O";
