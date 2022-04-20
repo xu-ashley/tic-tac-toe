@@ -1,15 +1,16 @@
 body {
-  font-size: 10em;
   text-align: center;
   margin: 0 auto;
 }
 
 h1 {
   color: red;
+  font-size: 5em;
 }
 
 .game-board {
   margin: 10% 0;
+  font-size: 10em;
 }
 
 .row {

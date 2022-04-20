@@ -1,34 +1,71 @@
 console.log("Hello");
 
-var player = "O";
+var player = "X";
 
 // $("#0-0").text("X");
 
+var grid = [
+  ["0-0", "0-1", "0-2"],
+  ["1-0", "1-1", "1-2"],
+  ["2-0", "2-1", "2-2"]
+];
 
 
+$(".cell").click(function() {
+  var clickedCell = $(this).attr("id");
 
-function addMark(row, column, mark) {
-  $("#" + row + "-" + column).text(mark);
+  console.log(player + " marked in box " + clickedCell);
+  $("#" + clickedCell).text(player);
+
+  function pushToGrid() {
+    var identifyRow = parseInt(clickedCell.charAt(0));
+    var positionClickedCell = grid[identifyRow].indexOf(clickedCell);
+
+    grid[identifyRow].splice(positionClickedCell, 1, player);
+    console.log(grid);
+    
+  }
+
+  pushToGrid();
 
   if (player == "X") {
     player = "O";
+    $(".title").text("Player " + player + "'s turn!");
   } else {
     player = "X";
+    $(".title").text("Player " + player + "'s turn!");
   };
-}
+})
 
-addMark(1, 2, "O");
 
+// function pushToGrid() {
+//
+// }
+
+
+
+// // function pushToGrid() {
+// //   // for (let i = 0; i < 3; i++)
+// //
+// //   for(let i = 0; i < grid.length; i++) {
+// //
+// //      for(let j = 0; j < grid.length; j++) {
+// //        grid.splice(grid.indexOf(this.id), 1, player);
+// //      }
+// //   }
+// //   console.log(grid);
+// //
+// // }
+//
+//
+//
+// //PANDU:
+// addMark(1, 2, "O");
+//
 // [["X", "", "O"], ["", "", "O"],["X", "", ""]]
-
-
 //
 //
-// var grid = [
-//   [0-0, 0-1, 0-2],
-//   [1-0, 1-1, 1-2],
-//   [2-0, 2-1, 2-2]
-// ];
+//
 //
 // function addStrike(){
 //
