@@ -1,5 +1,5 @@
-#Titles
-##Title 2
+# Titles
+## Title 2
 **bold**
 [Links](link.com)
 1. asdf
@@ -16,18 +16,12 @@
  [x]center game board
  []push X/O to array
 
-Clicks
+## Clicks
 - click a box, put a **mark**
   - push "mark" to array
   - console.log arrays
 
 
-
-
-
-
-## Extras Pretty
-- Invert colors button!
 
 
 ## HTML

@@ -29,9 +29,10 @@ $(".cell").click(function() {
     console.log(player + " marked in box " + clickedCell);
     $("#" + clickedCell).text(player);
     pushToGrid();
-    isWin();
+    if (isWin() === true) {
+      $(".title").text("Player " + player + " wins!");
+    }
   }
-
 
   function pushToGrid() {
     var identifyRow = parseInt(clickedCell.charAt(0));
@@ -39,10 +40,7 @@ $(".cell").click(function() {
 
     grid[identifyRow].splice(positionClickedCell, 1, player);
     console.log(grid);
-
   }
-
-
 })
 
 
@@ -55,51 +53,54 @@ function isWin() {
   }
   isDiagonalUpWin(grid, player);
   // console.log("PLAYER " + player + " WINS!");
-  // return;
+
   isDiagonalDownWin(grid, player);
 
-  $(".title").text("Player " + player + " wins!");
-
-
+  // if (isHorizontalWin() != false || isVerticalWin() != false || isDiagonalUpWin() != false || isDiagonalUpWin() != false){
+  //   return true;
+  // }
 }
 
 function isHorizontalWin(grid, player, r) {
   for (let c = 0; c < 3; c++) {
     if (grid[r][c] === player) {
       continue;
+
     } else {
       return;
     }
   }
   console.log("horiz win");
-
+  $(".title").text("Player " + player + " wins!");
 }
-
 
 function isVerticalWin(grid, player, c) {
   for (let r = 0; r < 3; r++) {
     if (grid[r][c] === player) {
       continue;
     } else {
-      return;
+      return ;
     }
   }
   console.log("vert win");
+  $(".title").text("Player " + player + " wins!");
 }
 
 function isDiagonalUpWin(grid, player) {
   if (grid[0][2] === player && grid[1][1] === player && grid[2][0] === player) {
     console.log("diag UP win!");
+    $(".title").text("Player " + player + " wins!");
   } else {
-    return
+    return ;
   }
 }
 
 function isDiagonalDownWin() {
   if (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) {
     console.log("diag DOWN win");
+    $(".title").text("Player " + player + " wins!");
   } else {
-    return
+    return;
   }
 
 }
