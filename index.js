@@ -10,22 +10,26 @@ var grid = [
   ["2-0", "2-1", "2-2"]
 ];
 
+//
 
 $(".cell").click(function() {
   if (player == "O") {
+    $(".title").text("Player " + player + "'s turn!");
+
     player = "X";
-    $(".title").text("Player " + player + "'s turn!");
   } else {
-    player = "O";
     $(".title").text("Player " + player + "'s turn!");
+    player = "O";
   }
 
   var clickedCell = $(this).attr("id");
 
   if ($("#" + clickedCell).text() == "X" || $("#" + clickedCell).text() == "O") {
     console.log("This box is already filled.");
+    $(".directions").text("Please click an empty square.");
     return;
   } else {
+    $(".directions").text("");
     console.log(player + " marked in box " + clickedCell);
     $("#" + clickedCell).text(player);
     pushToGrid();
