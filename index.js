@@ -13,14 +13,8 @@ var grid = [
 //
 
 $(".cell").click(function() {
-  if (player == "O") {
-    $(".title").text("Player " + player + "'s turn!");
 
-    player = "X";
-  } else {
-    $(".title").text("Player " + player + "'s turn!");
-    player = "O";
-  }
+
 
   var clickedCell = $(this).attr("id");
 
@@ -28,14 +22,24 @@ $(".cell").click(function() {
     console.log("This box is already filled.");
     $(".directions").text("Please click an empty square.");
     return;
-  } else {
+  }else {
+    //add this if/else statement so that the player=X/O doesn't change when user clicks on filled cell
+    if (player == "O") {
+      $(".title").text("Player " + player + "'s turn!");
+
+      player = "X";
+    } else {
+      $(".title").text("Player " + player + "'s turn!");
+      player = "O";
+    }
+
     $(".directions").text("");
     console.log(player + " marked in box " + clickedCell);
     $("#" + clickedCell).text(player);
     pushToGrid();
-    if (isWin() === true) {
-      $(".title").text("Player " + player + " wins!");
-    }
+    // if (isWin() === true) {
+    //   $(".title").text("Player " + player + " wins!");
+    // }
   }
 
   function pushToGrid() {
