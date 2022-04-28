@@ -37,6 +37,7 @@ $(".cell").click(function() {
     console.log(player + " marked in box " + clickedCell);
     $("#" + clickedCell).text(player);
     pushToGrid();
+    isWin();
     // if (isWin() === true) {
     //   $(".title").text("Player " + player + " wins!");
     // }
