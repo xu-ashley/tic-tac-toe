@@ -18,11 +18,13 @@
  [x]stop the X/O switching when click on filled cell
     (moved if statement to nest inside "else" statement)
 
+
+  []end game when all cells filled
+     []TIE
+         IF...all squares filled (all squares contain O or X), AND isWin=falsel; then, TIE!
+
  []after WIN, don't allow any more cells to be filled
     click anywhere-- "refresh the page to start a new game."
- []end game when all cells filled
-    []TIE
-        IF...all squares filled (all squares contain O or X), AND isWin=falsel; then, TIE!
 
 ## Clicks
 - click a box, put a **mark**

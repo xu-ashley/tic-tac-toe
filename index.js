@@ -22,7 +22,7 @@ $(".cell").click(function() {
     console.log("This box is already filled.");
     $(".directions").text("Please click an empty square.");
     return;
-  }else {
+  } else {
     //add this if/else statement so that the player=X/O doesn't change when user clicks on filled cell
     if (player == "O") {
       $(".title").text("Player " + player + "'s turn!");
@@ -38,6 +38,7 @@ $(".cell").click(function() {
     $("#" + clickedCell).text(player);
     pushToGrid();
     isWin();
+    isTie();
     // if (isWin() === true) {
     //   $(".title").text("Player " + player + " wins!");
     // }
@@ -52,6 +53,18 @@ $(".cell").click(function() {
   }
 })
 
+function isTie() {
+  for (let r = 0; r < 3; r++) {
+    for (let c = 0; c < 3; c++) {
+      if (grid[r][c] != "X" && grid[r][c] != "O") {
+        console.log("not a TIE");
+        return;
+      }
+    }
+  }
+  console.log("*** TIE ***");
+  $(".title").text("It's a TIE!");
+}
 
 function isWin() {
   for (let r = 0; r < 3; r++) {
@@ -88,7 +101,7 @@ function isVerticalWin(grid, player, c) {
     if (grid[r][c] === player) {
       continue;
     } else {
-      return ;
+      return;
     }
   }
   console.log("vert win");
@@ -100,7 +113,7 @@ function isDiagonalUpWin(grid, player) {
     console.log("diag UP win!");
     $(".title").text("Player " + player + " wins!");
   } else {
-    return ;
+    return;
   }
 }
 
