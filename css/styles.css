@@ -9,25 +9,32 @@ h1 {
 }
 
 .game-board {
-  margin: 10% 0;
   font-size: 10em;
+  width: 600px;
+  margin: auto;
 }
 
-.row {
+/* .row-1, .row-2, .row-0 */
+.row{
   align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
-  margin: 0 auto;
+}
+
+/* col-0, col-1, col-2 */
+.row-1{
+  border: solid green;
+  border-width: 3px 0;
 }
 
 .cell {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 200px;
   width: 200px;
 }
 
-/* #0-0, #0-1, #0-2 {
-  border: 0px 2px solid black;
-
-} */
+.col-1 {
+  border: solid purple;
+  border-width: 0 3px;
+}
