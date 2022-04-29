@@ -15,9 +15,8 @@ $(".cell").click(function() {
 
   var clickedCell = $(this).attr("id");
 
-  if (isWin() === true) {
+  if (isWin() === true || isTie() === true) {
     //repeated code..
-    $(".title").text(player + " WINS!");
     $(".directions").html("To restart game, refresh the page.")
     return;
   }
@@ -77,6 +76,7 @@ function isTie() {
   console.log("*** TIE ***");
   $(".title").text("It's a TIE!");
   $(".directions").text("To restart game, refresh the page.")
+  return true;
 }
 
 
