@@ -2,12 +2,18 @@ body {
 
   color: #594f4f;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
   text-align: center;
 }
 
 h1 {
   color: #547980;
   font-size: 5em;
+}
+
+h2{
+  margin: 5% 0;
 }
 
 .game-board {
