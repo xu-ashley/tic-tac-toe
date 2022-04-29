@@ -1,10 +1,12 @@
 body {
-  text-align: center;
+
+  color: #594f4f;
   margin: 0 auto;
+  text-align: center;
 }
 
 h1 {
-  color: red;
+  color: #547980;
   font-size: 5em;
 }
 
@@ -15,7 +17,7 @@ h1 {
 }
 
 /* .row-1, .row-2, .row-0 */
-.row{
+.row {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -23,8 +25,8 @@ h1 {
 }
 
 /* col-0, col-1, col-2 */
-.row-1{
-  border: solid green;
+.row-1 {
+  border: solid #9de0ad;
   border-width: 3px 0;
 }
 
@@ -35,23 +37,22 @@ h1 {
 }
 
 .col-1 {
-  border: solid purple;
+  border: solid #9de0ad;
   border-width: 0 3px;
 }
 
 @media (max-width:700px) {
-  h1{
+  h1 {
     font-size: 3em;
   }
+
   .game-board {
     font-size: 6em;
     width: 375px;
   }
 
   .cell {
-
     height: 125px;
     width: 125px;
   }
-
 }

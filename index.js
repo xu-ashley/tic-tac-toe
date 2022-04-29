@@ -10,23 +10,28 @@ var grid = [
   ["2-0", "2-1", "2-2"]
 ];
 
-//
 
 $(".cell").click(function() {
 
-
-
   var clickedCell = $(this).attr("id");
+
+  if (isWin() === true) {
+    //repeated code..
+    $(".title").text(player + " WINS!");
+    $(".directions").html("To restart game, refresh the page.")
+    return;
+  }
 
   if ($("#" + clickedCell).text() == "X" || $("#" + clickedCell).text() == "O") {
     console.log("This box is already filled.");
     $(".directions").text("Please click an empty square.");
     return;
+
   } else {
     //add this if/else statement so that the player=X/O doesn't change when user clicks on filled cell
+
     if (player == "O") {
       $(".title").text("Player " + player + "'s turn!");
-
       player = "X";
     } else {
       $(".title").text("Player " + player + "'s turn!");
@@ -34,15 +39,22 @@ $(".cell").click(function() {
     }
 
     $(".directions").text("");
+
     console.log(player + " marked in box " + clickedCell);
+
     $("#" + clickedCell).text(player);
+
     pushToGrid();
     isTie();
-    isWin();
-    // if (isWin() === true) {
-    //   $(".title").text("Player " + player + " wins!");
-    // }
+    //repeated code..
+    if (isWin() === true) {
+      $(".title").text(player + " WINS!");
+      $(".directions").text("To restart game, refresh the page.")
+      return;
+    }
   }
+  // isWin();
+  // if (isWin() === true)
 
   function pushToGrid() {
     var identifyRow = parseInt(clickedCell.charAt(0));
@@ -70,16 +82,23 @@ function isTie() {
 
 function isWin() {
   for (let r = 0; r < 3; r++) {
-    isHorizontalWin(grid, player, r)
+    if (isHorizontalWin(grid, player, r)) {
+      return true;
+    }
   }
   for (let c = 0; c < 3; c++) {
-    isVerticalWin(grid, player, c);
+    if (isVerticalWin(grid, player, c)) {
+      return true;
+    }
   }
-  isDiagonalUpWin(grid, player);
+  if (isDiagonalUpWin(grid, player)) {
+    return true;
+  }
   // console.log("PLAYER " + player + " WINS!");
 
-  isDiagonalDownWin(grid, player);
-
+  if (isDiagonalDownWin(grid, player)) {
+    return true;
+  }
   // if (isHorizontalWin() != false || isVerticalWin() != false || isDiagonalUpWin() != false || isDiagonalUpWin() != false){
   //   return true;
   // }
@@ -87,44 +106,40 @@ function isWin() {
 
 function isHorizontalWin(grid, player, r) {
   for (let c = 0; c < 3; c++) {
-    if (grid[r][c] === player) {
-      continue;
-
-    } else {
-      return;
+    if (grid[r][c] !== player) {
+      return false;
     }
+
   }
   console.log("horiz win");
-  $(".title").text("Player " + player + " wins!");
+  return true;
 }
 
 function isVerticalWin(grid, player, c) {
   for (let r = 0; r < 3; r++) {
-    if (grid[r][c] === player) {
-      continue;
-    } else {
-      return;
+    if (grid[r][c] !== player) {
+      return false
     }
   }
   console.log("vert win");
-  $(".title").text("Player " + player + " wins!");
+  return true;
 }
 
 function isDiagonalUpWin(grid, player) {
   if (grid[0][2] === player && grid[1][1] === player && grid[2][0] === player) {
     console.log("diag UP win!");
-    $(".title").text("Player " + player + " wins!");
+    return true;
   } else {
-    return;
+    return false;
   }
 }
 
 function isDiagonalDownWin() {
   if (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) {
     console.log("diag DOWN win");
-    $(".title").text("Player " + player + " wins!");
+    return true;
   } else {
-    return;
+    return false;
   }
 
 }

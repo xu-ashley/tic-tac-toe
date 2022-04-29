@@ -2,8 +2,7 @@
 ## Title 2
 **bold**
 [Links](link.com)
-1. asdf
-2. asdf
+
 
 #Wins
 - [starting code from pandu!](https://pastebin.com/CVT2cVkN)
@@ -17,33 +16,27 @@
  [x]push X/O to array
  [x]stop the X/O switching when click on filled cell
     (moved if statement to nest inside "else" statement)
-
-
-  []end game when all cells filled
-     []TIE
+ [x]end game when all cells filled
+     [x]TIE
          IF...all squares filled (all squares contain O or X), AND isWin=falsel; then, TIE!
 
- []after WIN, don't allow any more cells to be filled
+ *[]after WIN, don't allow any more cells to be filled*
     click anywhere-- "refresh the page to start a new game."
 
 ## Clicks
-- click a box, put a **mark**
-  - push "mark" to array
-  - console.log arrays
-
-
+[x] click a box, put a **mark**
+  [x] push "mark" to array
+  [x] console.log(array)
 
 
 ## HTML
-Player X's turn
-Player O's turn
+[x]Player X's turn
+[x]Player O's turn
+[x]Player _ wins!
+[x]Tie!
+[x] if click on a space w/ text in it: "PLEASE CLICK EMPTY SQUARE"
 
-Player _ wins!
-Tie!
-
-- if click on a space w/ text in it: "PLEASE CLICK EMPTY SQUARE"
-
-## Wins Attempt
+## Wins Attempt 1
 array row 0
 Array row 1:
 array row 2:
@@ -90,7 +83,7 @@ if (player == "X") {
 	player = "X";
 }
 
-## put "X" or "O" in array!
+## push/put "X" or "O" in array!
 - click square, get ID
 - based on id, figure out where in array to place the X or O!
 
@@ -99,7 +92,7 @@ if (player == "X") {
   - if not, continue
 check second element [ , , ]
 
-# Push To Grid Array Attempt #2
+# Push To Grid Array Attempt 2
 row
 cell
 if this.id = "0-" + x
@@ -111,12 +104,9 @@ then grid[0][x].push(player)
         grid[r].splice(c, 1, player);
       }
     }
-
-    }
-
+  }
 
 # WINS
 - HORIZONTAL: if grid[r][0], grid[r][1], grid[r][2] = all X's or O's
 - VERTICAL: if grid[0][c], grid[1][c], grid[2][c] = all X's or O's
-
 - DIAGONAL: custom
