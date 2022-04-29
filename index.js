@@ -37,8 +37,8 @@ $(".cell").click(function() {
     console.log(player + " marked in box " + clickedCell);
     $("#" + clickedCell).text(player);
     pushToGrid();
-    isWin();
     isTie();
+    isWin();
     // if (isWin() === true) {
     //   $(".title").text("Player " + player + " wins!");
     // }
@@ -64,7 +64,9 @@ function isTie() {
   }
   console.log("*** TIE ***");
   $(".title").text("It's a TIE!");
+  $(".directions").text("To restart game, refresh the page.")
 }
+
 
 function isWin() {
   for (let r = 0; r < 3; r++) {

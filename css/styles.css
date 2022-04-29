@@ -38,3 +38,20 @@ h1 {
   border: solid purple;
   border-width: 0 3px;
 }
+
+@media (max-width:700px) {
+  h1{
+    font-size: 3em;
+  }
+  .game-board {
+    font-size: 6em;
+    width: 375px;
+  }
+
+  .cell {
+
+    height: 125px;
+    width: 125px;
+  }
+
+}
