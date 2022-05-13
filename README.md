@@ -30,7 +30,7 @@ a game of tic tac toe.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Tic Tac Toe Screen Shot][images/start-game.png]](https://xu-ashley.github.io/tic-tac-toe)
+[![Tic Tac Toe Screen Shot](images/start-game.png)](https://xu-ashley.github.io/tic-tac-toe)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
