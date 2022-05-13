@@ -48,9 +48,6 @@ h2{
 }
 
 @media (max-width:700px) {
-  h1 {
-    font-size: 3em;
-  }
 
   .game-board {
     font-size: 6em;

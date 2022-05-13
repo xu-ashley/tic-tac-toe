@@ -42,16 +42,23 @@ $(".cell").click(function() {
     $("#" + clickedCell).text(player);
 
     pushToGrid();
-    isTie();
+
+    if (isTie() === true) {
+      console.log("*** TIE ***");
+      $(".title").text("It's a TIE!");
+      // $(".directions").text("To restart game, refresh the page.");
+      return;
+    }else{
+      console.log("not a TIE");
+    }
+
     //repeated code..
     if (isWin() === true) {
       $(".title").text(player + " WINS!");
-      $(".directions").text("To restart game, refresh the page.")
+      // $(".directions").text("To restart game, refresh the page.");
       return;
     }
   }
-  // isWin();
-  // if (isWin() === true)
 
   function pushToGrid() {
     var identifyRow = parseInt(clickedCell.charAt(0));
@@ -66,17 +73,12 @@ function isTie() {
   for (let r = 0; r < 3; r++) {
     for (let c = 0; c < 3; c++) {
       if (grid[r][c] != "X" && grid[r][c] != "O") {
-        console.log("not a TIE");
-        return;
+        return false;
       }
     }
   }
-  console.log("*** TIE ***");
-  $(".title").text("It's a TIE!");
-  $(".directions").text("To restart game, refresh the page.")
   return true;
 }
-
 
 function isWin() {
   for (let r = 0; r < 3; r++) {
