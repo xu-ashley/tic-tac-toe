@@ -27,8 +27,6 @@ $(".cell").click(function() {
     return;
 
   } else {
-    //add this if/else statement so that the player=X/O doesn't change when user clicks on filled cell
-
     if (player == "O") {
       $(".title").text("Player " + player + "'s turn!");
       player = "X";
